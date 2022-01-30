@@ -1,7 +1,7 @@
 use cache::Cache;
 
 fn fib_cache(cache: &mut dyn Cache<usize, Item = u64>, n: usize) -> u64 {
-    if let Some(&mut f) = cache.retrieve(n) {
+    if let Some(&mut f) = cache.retrieve(&n) {
         return f;
     }
     let f = match n {
@@ -34,12 +34,12 @@ fn test_fib_dp() {
 }
 
 pub fn test_fib_cache(mut cache: Box<dyn Cache<usize, Item = u64>>) {
-    let k = cache.capacity() + 3;
+    let k = cache.capacity().unwrap_or(40) + 3;
     assert_eq!(fib_dp(k), fib_cache(&mut *cache, k));
     for i in 0..=k {
-        if let Some(&mut f) = cache.retrieve(i) {
+        if let Some(&mut f) = cache.retrieve(&i) {
             assert_eq!(fib_dp(i), f);
         }
     }
-    assert!(cache.retrieve(k + 1).is_none());
+    assert!(cache.retrieve(&(k + 1)).is_none());
 }
