@@ -57,7 +57,6 @@ cache_tests::test_fib_cache(Box::new(HashMapCache::default()));
 ```
 */
 
-
 /// A generic cache.
 pub trait Cache<K> {
     /// Type of item being cached.
