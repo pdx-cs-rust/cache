@@ -6,6 +6,24 @@ provide a common interface for cache implementations.  The
 associated `cache-tests` crate provides some generic cache
 tests.
 
+## Background
+
+A *cache* is a common structure in computing. It manifests
+as a memory store that sits "in front of" some collection of
+values that are difficult or expensive to produce. When a
+value is requested, it may be present in the cache, in which
+case it can be quickly returned. Otherwise the produced
+value may be stored in the cache for later reference.
+
+Typically a cache has too little storage to contain all the
+values that might be produced during a computation. Thus an
+*eviction policy* is needed, specifying which of the
+competing values should be retained.
+
+The `Cache` trait here abstracts over caches with different
+capacities and eviction policies, providing a simple
+interface.
+
 ## Examples
 
 ```rust
