@@ -58,6 +58,10 @@ impl<K: Hash + Eq, I> Cache<K> for HashMapCache<K, I> {
 cache_tests::test_fib_cache(Box::new(HashMapCache::default()));
 ```
 
+Full crate
+[rustdoc](https://pdx-cs-rust.github.io/cache/cache/index.html)
+is available.
+
 This crate is made available under the "MIT
 license". Please see the file `LICENSE` in this distribution
 for license terms.

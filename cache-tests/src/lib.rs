@@ -1,3 +1,9 @@
+/*!
+Provide tests of a cache using Fibonacci numbers notionally
+computed "the slow way". Depth is adjusted to cache capacity
+or so.
+*/
+
 use cache::Cache;
 
 fn fib_cache(cache: &mut dyn Cache<usize, Item = u64>, n: usize) -> u64 {

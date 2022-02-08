@@ -1,0 +1,4 @@
+var searchIndex = JSON.parse('{\
+"cache":{"doc":"This crate provides a <code>Cache</code> trait that can be used to …","t":[8,16,11,10,10],"n":["Cache","Item","capacity","insert","retrieve"],"q":["cache","","","",""],"d":["A generic cache.","Type of item being cached.","Report the capacity limit of the cache. If <code>None</code>, the cache …","Insert an item in the cache at the given key.","Retrieve the item in the cache at the given key, if any."],"i":[0,1,1,1,1],"f":[null,null,[[],["option",4,[["usize",15]]]],[[]],[[],["option",4]]],"p":[[8,"Cache"]]}\
+}');
+if (window.initSearch) {window.initSearch(searchIndex)};
